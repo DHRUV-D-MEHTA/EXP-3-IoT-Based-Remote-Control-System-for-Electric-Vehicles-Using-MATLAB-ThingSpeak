@@ -45,12 +45,80 @@ o	Field 2 → EV Status
 
 
 ## MATLAB Code (Without MQTT Client Toolbox) 
+## MATLAB CODE
 
+```matlab
+clear; clc;
+
+disp('Choose a remote function:');
+disp('1 - Lock Doors');
+disp('2 - Unlock Doors');
+disp('3 - Start Engine');
+disp('4 - Stop Engine');
+disp('5 - Turn On Lights');
+disp('6 - Turn Off Lights');
+
+n = input('Enter your choice (1-6): ');
+
+cmd = ["LOCK","UNLOCK","START","STOP","LIGHT_ON","LIGHT_OFF"];
+
+if n >= 1 && n <= 6
+    disp(['Command Sent: ', char(cmd(n))]);
+    
+    switch n
+        case 1
+            status = 'Doors Locked';
+        case 2
+            status = 'Doors Unlocked';
+        case 3
+            status = 'Engine Started';
+        case 4
+            status = 'Engine Stopped';
+        case 5
+            status = 'Lights ON';
+        case 6
+            status = 'Lights OFF';
+    end
+    
+    disp(['EV Status: ', status]);
+else
+    disp('Invalid choice. Please enter a number between 1 and 6.');
+end
+```
+
+## OUTPUT
+
+The program displays six EV remote-control functions:
+
+1. Lock Doors
+2. Unlock Doors
+3. Start Engine
+4. Stop Engine
+5. Turn On Lights
+6. Turn Off Lights
+
+For example, if the user selects:
+
+```text
+3
+```
+
+The output is:
+
+```text
+Command Sent: START
+EV Status: Engine Started
+```
+
+## RESULT
+
+The EV remote-control functions were successfully simulated using MATLAB. The program allows the user to select commands for door locking, engine control, and lighting control and displays the corresponding EV status.
 
 
 ## Output:
 
 
+<img width="1917" height="985" alt="image" src="https://github.com/user-attachments/assets/88fd7557-b37f-44c6-9fdd-70fa46899584" />
 
 
 ## Result:
